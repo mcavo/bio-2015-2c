@@ -1,0 +1,5 @@
+Pattern: EBOLAVIRUS
+==============================================
+ * Definition: LOW QUALITY PROTEIN: spike glycoprotein [Zaire ebolavirus] >gi|465411|sp|Q05320.1|VGP_EBOZM RecName: Full=Envelope glycoprotein; AltName: Full=GP1,2; Short=GP; Contains: RecName: Full=GP1; Contains: RecName: Full=GP2; Contains: RecName: Full=GP2-delta; Flags: Precursor [Ebola virus - Mayinga, Zaire, 1976] >gi|11761750|gb|AAG40168.1|AF272001_5 surface glycoprotein GP [Zaire ebolavirus] >gi|290392|gb|AAB81004.1| glycoprotein [Zaire ebolavirus] >gi|1041205|gb|AAC54887.1| virion spike glycoprotein [Zaire ebolavirus] >gi|4262350|gb|AAD14585.1| virion spike glycoprotein precursor [Ebola virus - Mayinga, Zaire, 1976] >gi|161652997|gb|ABX75367.1| virion spike glycoprotein precursor [Zaire ebolavirus] >gi|566573377|gb|AHC70246.1| GP1,2 [Zaire ebolavirus] >gi|692112634|gb|AIR94008.1| virion spike glycoprotein precursor [Zaire ebolavirus]
+ * Accession: NP_066246
+ * Fasta sequence: 
