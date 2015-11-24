@@ -1,13 +1,13 @@
 require 'bio'
 
-# ruby Ex2.rb remote sequences/cftr-hs-t.fasta
+# ruby Ex2.rb remote blastn dbsts sequences/cftr-hs-t.fasta
 
-if ARGV.length != 2
+if ARGV.length != 4
   raise "Error: Invalid amount of arguments!"
 end
 
-if ARGV[0]!='local' && ARGV[0]!='remote'
-  raise "Error: Firt argument must be remote or local!"
+if ARGV[0]!='remote'
+  raise "Error: Firt argument must be remote"
 end
 
 aux = ARGV[1].split(".")
@@ -27,14 +27,18 @@ end
 
 fasta_content = Bio::FlatFile.open(Bio::FastaFormat, ARGV[1])
 if ARGV[0]=='remote'
-  blast = Bio::Blast.remote("blastn", "dbsts", "-e 0.0001", "genomenet")
+  blast = Bio::Blast.remote(ARGV[2], ARGV[3], "-e 0.0001", "genomenet")
   Dir.mkdir("output") unless File.exists?("output")
   File.open("output/#{file_name}_remote.blast", "w") do |f|
     fasta_content.each_entry do |fc|
       $stderr.puts "Searching ... "+fc.definition
-      f.puts '*************************************************************************************'
-      f.puts fc.definition
-      f.puts '*************************************************************************************'
+      aux =''
+      (fc.definition.length+4).times do |n|
+        aux << '*'
+      end
+      f.puts aux
+      f.puts '* ' + fc.definition + ' *'
+      f.puts aux
       report = blast.query(fc.seq)
       report.hits.each_entry do |hit|
         f.puts "Hit num: #{hit.num}"
