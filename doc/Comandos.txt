@@ -1,0 +1,16 @@
+# En la terminal
+# Ejercicio 1
+ruby Ex1.rb sequences/cftr-hs-t.gb
+
+# Ejercicio 2
+# Nucleico
+ruby Ex2.rb remote sequences/cftr-hs-t.fasta blastn dbsts
+#Proteina
+ruby Ex2.rb remote sequences/cftr-prot-hs.fasta blastp swissprot
+
+# Ejercicio 3
+ruby Ex3.rb sequences/59S2KXK501R-Alignment.xml PATTERN
+
+# Ejercicio 4
+ruby Ex4.rb sequences/pruebaa.fa prune
+ruby Ex4.rb sequences/pruebaa.fa noprune
