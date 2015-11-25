@@ -3,9 +3,7 @@
 require 'bio'
 
 if ARGV.length != 2
-  puts 'FATAL ERROR: Invalid amount of arguments!'
-  puts 'Example: ruby Ex3.rb sequences/59S2KXK501R-Alignment.xml homo'
-  exit
+  raise 'ERROR: Invalid amount of arguments!'
 end
 
 pattern = ARGV[1].upcase
