@@ -1,18 +1,19 @@
 require 'bio'
 
-# ruby Ex2.rb remote blastn dbsts sequences/cftr-hs-t.fasta
+# ruby Ex2.rb remote sequences/cftr-hs-t.fasta blastn dbsts
+#si fuesen proteinas blastp swiss
 
 if ARGV.length != 4
-  raise "Error: Invalid amount of arguments!"
+  raise "ERROR: Invalid amount of arguments!"
 end
 
 if ARGV[0]!='remote'
-  raise "Error: Firt argument must be remote"
+  raise "ERROR: Firt argument must be remote"
 end
 
 aux = ARGV[1].split(".")
 if aux.length!=2
-  raise "Error: Invalid file name! Must have a .fa, .fsa, .fna, .mpfa or .fasta extension"
+  raise "ERROR: Invalid file name! Must have a .fa, .fsa, .fna, .mpfa or .fasta extension"
 end
 
 auxaux = aux[0].split("/")
@@ -20,7 +21,7 @@ file_name = auxaux.last
 file_extension = aux[1]
 
 if file_extension!="fa" && file_extension!="fasta" && file_extension!="mpfa" && file_extension!="fna" && file_extension!="fsa"
-  raise "Error: Invalid file extension! Must have a .fa, .fsa, .fna, .mpfa or .fasta extension"
+  raise "ERROR: Invalid file extension! Must have a .fa, .fsa, .fna, .mpfa or .fasta extension"
 end
 
 
@@ -64,6 +65,8 @@ if ARGV[0]=='remote'
         f.puts '_____________________________________________________________________________________'
         f.puts '_____________________________________________________________________________________'
       end
+      f.puts ""
+      f.puts ""
     end
   end
 else
